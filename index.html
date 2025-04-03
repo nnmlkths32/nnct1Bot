@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кликер</title>
+    <title>Рыжик</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
+        img {
+            width: 200px;
+            cursor: pointer; 
+            transition: transform 0.2s; 
+        }
+        img:hover {
+            transform: scale(1.1); 
         }
     </style>
 </head>
 <body>
-    <h1>Кликер</h1>
-    <p>Клики: <span id="count">0</span></p>
-    <button onclick="increment()">Кликни меня!</button>
+    <h1>Бей его!</h1>
+    <p>Получено пизды: <span id="count">0</span></p>
+    
+    
+    <img src="https://github.com/nnmlkths32/nnct1Bot/blob/main/button_1.png" alt="Click me!" onclick="increment()">
 
     <script>
         let count = 0;
