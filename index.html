@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('https://github.com/nnmlkths32/nnct1Bot/raw/main/back_1.png');
+            background-image: url('https://github.com/nnmlkths32/nnct1Bot/raw/main/back_2.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -27,11 +27,6 @@
         img {
             width: 200px;
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        img:hover {
-            transform: scale(1.1);
         }
 
         p {
@@ -44,7 +39,7 @@
     <div class="container">
         <h1>Бей его!</h1>
         <p>Получено пизды: <span id="count">0</span></p>
-        <img src="https://github.com/nnmlkths32/nnct1Bot/raw/main/button_1.png" alt="Click me!" onclick="increment()">
+        <img id="clickImage" src="https://github.com/nnmlkths32/nnct1Bot/raw/main/button_1.png" alt="Click me!" onclick="increment()">
     </div>
 
     <script>
@@ -52,6 +47,11 @@
         function increment() {
             count++;
             document.getElementById('count').innerText = count;
+            let img = document.getElementById('clickImage');
+            img.src = "https://github.com/nnmlkths32/nnct1Bot/raw/main/button_2.png";
+            setTimeout(() => {
+                img.src = "https://github.com/nnmlkths32/nnct1Bot/raw/main/button_1.png";
+            }, 200); // Возвращаем через 200 мс
         }
     </script>
 </body>
