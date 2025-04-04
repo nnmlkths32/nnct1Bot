@@ -53,6 +53,8 @@
         <audio id="bgMusic" loop>
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
         </audio>
+
+        <audio id="effectSound"></audio>
     </div>
 
     <script>
@@ -68,6 +70,12 @@
                 music.play().catch(e => console.log("Ошибка при запуске музыки:", e));
                 musicStarted = true;
             }
+
+            const soundFiles = ["s1.mp3", "s2.mp3", "s3.mp3", "s4.mp3"];
+            const randomSound = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+            const soundElement = document.getElementById("effectSound");
+            soundElement.src = `https://github.com/nnmlkths32/nnct1Bot/raw/main/s/${randomSound}`;
+            soundElement.play().catch(e => console.log("Ошибка при проигрывании звука:", e));
 
             let img = document.getElementById('clickImage');
             img.src = "https://github.com/nnmlkths32/nnct1Bot/raw/main/button_2.png";
