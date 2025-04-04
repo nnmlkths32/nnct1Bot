@@ -42,7 +42,6 @@
             outline: none;
             -webkit-tap-highlight-color: transparent;
         }
-
     </style>
 </head>
 <body>
@@ -51,16 +50,25 @@
         <p>Получено пизды: <span id="count">0</span></p>
         <img id="clickImage" src="https://github.com/nnmlkths32/nnct1Bot/raw/main/button_1.png" alt="Click me!" onclick="increment()">
 
-        <audio id="bgMusic" autoplay loop>
+        <audio id="bgMusic" loop>
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
         </audio>
     </div>
 
     <script>
         let count = 0;
+        let musicStarted = false;
+
         function increment() {
             count++;
             document.getElementById('count').innerText = count;
+
+            if (!musicStarted) {
+                const music = document.getElementById('bgMusic');
+                music.play().catch(e => console.log("Ошибка при запуске музыки:", e));
+                musicStarted = true;
+            }
+
             let img = document.getElementById('clickImage');
             img.src = "https://github.com/nnmlkths32/nnct1Bot/raw/main/button_2.png";
             setTimeout(() => {
